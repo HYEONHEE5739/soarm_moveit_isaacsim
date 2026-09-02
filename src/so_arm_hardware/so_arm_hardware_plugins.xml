@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<library path="so_arm_hardware">
+  <class
+    name="so_arm_hardware/SoArmSystem"
+    type="so_arm_hardware::SoArmSystem"
+    base_class_type="hardware_interface::SystemInterface">
+    <description>SO-ARM follower hardware interface</description>
+  </class>
+</library>

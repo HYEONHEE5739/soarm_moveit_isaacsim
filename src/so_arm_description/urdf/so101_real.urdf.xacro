@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="so101_calibrated">
+
+    <xacro:arg name="initial_positions_file"
+               default="$(find so_arm_moveit_config)/config/initial_positions.yaml" />
+
+    <!-- 기본 로봇 구조는 description 패키지의 raw urdf 사용 -->
+    <xacro:include filename="$(find so_arm_description)/urdf/so101_calibrated.urdf" />
+
+    <!-- ros2_control 설정은 moveit_config 안의 파일 사용 -->
+    <xacro:include filename="$(find so_arm_description)/urdf/so101_real.ros2_control.xacro" />
+
+    <xacro:so101_real_ros2_control
+        name="SoArmSystem"
+        initial_positions_file="$(arg initial_positions_file)"/>
+
+</robot>
